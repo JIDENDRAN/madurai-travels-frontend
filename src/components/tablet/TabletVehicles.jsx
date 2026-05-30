@@ -16,12 +16,12 @@ const defaultVehicles = [
     bgImage: 'kanyakumari_bg.png'
   },
   {
-    name: 'Maruti Ertiga',
-    seats: '7 Seater',
+    name: 'Maruti Ciaz Premium Sedan',
+    seats: '4 Seater',
     ac: 'AC',
-    price: '₹14/km',
-    desc: '[Outstation Plan]\nRate: ₹14/km\nMin Distance: Above 250 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nBase Rent: ₹1600/day\nPer km Charge: ₹11/km',
-    image: 'suv-removebg-preview.png',
+    price: '₹13/km',
+    desc: '[Outstation Plan]\nRate: ₹13/km\nMin Distance: Above 250 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nBase Rent: ₹1500/day\nPer km Charge: ₹10/km',
+    image: 'sedan_cab-removebg-preview.png',
     bgImage: 'munnar_bg.png'
   },
   {

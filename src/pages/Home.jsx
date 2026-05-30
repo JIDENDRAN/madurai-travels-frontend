@@ -35,12 +35,12 @@ const defaultVehicles = [
     bgImage: 'kanyakumari_bg.png'
   },
   {
-    name: 'Maruti Ertiga',
-    seats: '7 Seater',
+    name: 'Maruti Ciaz Premium Sedan',
+    seats: '4 Seater',
     ac: 'AC',
-    price: '₹14/km',
-    desc: '[Outstation Plan]\nRate: ₹14/km\nMin Distance: Above 250 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nBase Rent: ₹1600/day\nPer km Charge: ₹11/km',
-    image: 'suv-removebg-preview.png',
+    price: '₹13/km',
+    desc: '[Outstation Plan]\nRate: ₹13/km\nMin Distance: Above 250 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nBase Rent: ₹1500/day\nPer km Charge: ₹10/km',
+    image: 'sedan_cab-removebg-preview.png',
     bgImage: 'munnar_bg.png'
   },
   {
@@ -119,7 +119,7 @@ const reviewsData = [
   },
   {
     name: 'Sanjay Krishnan',
-    text: 'Best outstation taxi service in Madurai. Clean Ertiga, safe night driving, and very professional behavior. No hidden charges - toll and parking bills were transparently shared. Recommend them to all tourists.',
+    text: 'Best outstation taxi service in Madurai. Clean Ciaz sedan, safe night driving, and very professional behavior. No hidden charges - toll and parking bills were transparently shared. Recommend them to all tourists.',
     role: 'Regular Traveler',
     rating: 4,
     avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&h=150&q=80'
