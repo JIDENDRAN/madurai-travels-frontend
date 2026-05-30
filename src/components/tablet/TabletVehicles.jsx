@@ -11,7 +11,7 @@ const defaultVehicles = [
     seats: '4 Seater',
     ac: 'AC',
     price: '₹13/km',
-    desc: '[Outstation Plan]\nRate: ₹13/km\nMin Distance: Above 300 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nDistance Limit: Up to 250 km\nBase Rent: ₹1500\nExtra Distance: ₹10/km\nDriver Charge: ₹300',
+    desc: '[Outstation Plan]\nRate: ₹13/km\nMin Distance: Above 300 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nDistance Limit: Up to 250 km\nBase Rent: ₹1500\nPer km Charge: ₹10/km\nDriver Charge: ₹300',
     image: 'sedan_cab-removebg-preview.png',
     bgImage: 'kanyakumari_bg.png'
   },
@@ -20,7 +20,7 @@ const defaultVehicles = [
     seats: '7 Seater',
     ac: 'AC',
     price: '₹14/km',
-    desc: '[Outstation Plan]\nRate: ₹14/km\nMin Distance: Above 250 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nBase Rent: ₹1600/day\nExtra Distance: ₹11/km',
+    desc: '[Outstation Plan]\nRate: ₹14/km\nMin Distance: Above 250 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nBase Rent: ₹1600/day\nPer km Charge: ₹11/km',
     image: 'suv-removebg-preview.png',
     bgImage: 'munnar_bg.png'
   },
@@ -29,7 +29,7 @@ const defaultVehicles = [
     seats: '7 Seater',
     ac: 'AC',
     price: '₹18/km',
-    desc: '[Outstation Plan]\nRate: ₹18/km\nMin Distance: Above 300 km\nDriver Charge: ₹400/day\n\n[Day Rental Plan]\nBase Rent: ₹2300/day\nExtra Distance: ₹13/km\nDriver Charge: ₹400/day',
+    desc: '[Outstation Plan]\nRate: ₹18/km\nMin Distance: Above 300 km\nDriver Charge: ₹400/day\n\n[Day Rental Plan]\nBase Rent: ₹2300/day\nPer km Charge: ₹13/km\nDriver Charge: ₹400/day',
     image: 'suv-removebg-preview.png',
     bgImage: 'thirumalai_mahal_bg.png'
   },
@@ -38,7 +38,7 @@ const defaultVehicles = [
     seats: '7 Seater',
     ac: 'AC',
     price: '₹22/km',
-    desc: '[Outstation Plan]\nRate: ₹22/km\nMin Distance: Above 300 km\nDriver Charge: ₹500/day\n\n[Day Rental Plan]\nBase Rent: ₹2700/day\nExtra Distance: ₹17/km',
+    desc: '[Outstation Plan]\nRate: ₹22/km\nMin Distance: Above 300 km\nDriver Charge: ₹500/day\n\n[Day Rental Plan]\nBase Rent: ₹2700/day\nPer km Charge: ₹17/km',
     image: 'innova_crysta-removebg-preview.png',
     bgImage: 'kodaikanal_bg.png'
   },
@@ -47,7 +47,7 @@ const defaultVehicles = [
     seats: '12 Seater',
     ac: 'AC',
     price: '₹25/km',
-    desc: '[Outstation Plan]\nRate: ₹25/km\nMin Distance: Above 350 km\n\n[Day Rental Plan]\nBase Rent: ₹2800/day\nExtra Distance: ₹18/km',
+    desc: '[Outstation Plan]\nRate: ₹25/km\nMin Distance: Above 350 km\n\n[Day Rental Plan]\nBase Rent: ₹2800/day\nPer km Charge: ₹18/km',
     image: 'tempo_traveller-removebg-preview.png',
     bgImage: 'rameswaram_bg.png'
   },
@@ -56,7 +56,7 @@ const defaultVehicles = [
     seats: '18 Seater',
     ac: 'AC',
     price: '₹30/km',
-    desc: '[Outstation Plan]\nRate: ₹30/km\nMin Distance: Above 300 km\n\n[Day Rental Plan]\nBase Rent: ₹3900/day\nExtra Distance: ₹22/km',
+    desc: '[Outstation Plan]\nRate: ₹30/km\nMin Distance: Above 300 km\n\n[Day Rental Plan]\nBase Rent: ₹3900/day\nPer km Charge: ₹22/km',
     image: 'tempo_traveller-removebg-preview.png',
     bgImage: 'ooty_bg.png'
   }

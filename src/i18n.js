@@ -70,6 +70,8 @@ const resources = {
       "Our Fleet": "Our Fleet",
       "Choose from our wide range of well-maintained vehicles for your journey.": "Choose from our wide range of well-maintained vehicles for your journey.",
       "Book Now": "Book Now",
+      "Extra Distance": "Per km Charge",
+      "Per km Charge": "Per km Charge",
 
       // Packages
       "Tour Packages": "Tour Packages",
