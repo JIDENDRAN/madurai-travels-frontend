@@ -1,0 +1,14 @@
+/* src/styles/tablet.css */
+/* Tablet specific overrides (768px – 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Scaling factor */
+  :root { --scale-factor: 0.95; }
+
+  /* Layout adjustments */
+  .hero-section { padding: 2rem 1rem; }
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .booking-form { width: 100%; margin: 0 auto; }
+  .vehicles-section, .packages-section { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .about-section { padding: 2rem 1rem; }
+  footer { text-align: center; padding: 1.5rem; }
+}

@@ -1,0 +1,14 @@
+/* src/styles/mobile.css */
+/* Mobile specific overrides (max-width: 767px) */
+@media (max-width: 767px) {
+  /* Scaling factor */
+  :root { --scale-factor: 0.88; }
+
+  /* Layout adjustments */
+  .hero-section { padding: 1.5rem 0.5rem; }
+  .navbar { flex-direction: column; }
+  .booking-form { padding: 1rem; }
+  .vehicles-section, .packages-section { grid-template-columns: 1fr; }
+  .about-section { padding: 1.5rem 0.5rem; }
+  footer { padding: 1rem; font-size: 0.875rem; }
+}
