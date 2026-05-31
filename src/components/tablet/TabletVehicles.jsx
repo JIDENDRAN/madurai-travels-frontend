@@ -10,8 +10,8 @@ const defaultVehicles = [
     name: 'Swift Dzire',
     seats: '4 Seater',
     ac: 'AC',
-    price: '₹13/km',
-    desc: '[Outstation Plan]\nRate: ₹13/km\nMin Distance: Above 300 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nDistance Limit: Up to 250 km\nBase Rent: ₹1500\nPer km Charge: ₹10/km\nDriver Charge: ₹300',
+    price: '₹14/km',
+    desc: '[Outstation Plan]\nRate: ₹14/km\nMin Distance: Above 250 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nBase Rent: ₹1600\nPer km Charge: ₹11/km\nDriver Charge: ₹300',
     image: 'sedan_cab-removebg-preview.png',
     bgImage: 'kanyakumari_bg.png'
   },
@@ -19,8 +19,8 @@ const defaultVehicles = [
     name: 'Maruti Ciaz Premium Sedan',
     seats: '4 Seater',
     ac: 'AC',
-    price: '₹13/km',
-    desc: '[Outstation Plan]\nRate: ₹13/km\nMin Distance: Above 250 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nBase Rent: ₹1500/day\nPer km Charge: ₹10/km',
+    price: '₹15/km',
+    desc: '[Outstation Plan]\nRate: ₹15/km\nMin Distance: Above 250 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nBase Rent: ₹1700/day\nPer km Charge: ₹10/km',
     image: 'sedan_cab-removebg-preview.png',
     bgImage: 'munnar_bg.png'
   },
@@ -28,8 +28,8 @@ const defaultVehicles = [
     name: 'Prime SUV',
     seats: '7 Seater',
     ac: 'AC',
-    price: '₹18/km',
-    desc: '[Outstation Plan]\nRate: ₹18/km\nMin Distance: Above 300 km\nDriver Charge: ₹400/day\n\n[Day Rental Plan]\nBase Rent: ₹2300/day\nPer km Charge: ₹13/km\nDriver Charge: ₹400/day',
+    price: '₹19/km',
+    desc: '[Outstation Plan]\nRate: ₹19/km\nMin Distance: Above 300 km\nDriver Charge: ₹400/day\n\n[Day Rental Plan]\nBase Rent: ₹2300/day\nPer km Charge: ₹13/km\nDriver Charge: ₹400/day',
     image: 'suv-removebg-preview.png',
     bgImage: 'thirumalai_mahal_bg.png'
   },

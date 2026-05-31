@@ -272,28 +272,26 @@ export default function InlineBookingForm({ defaultVehicle, defaultPackage }) {
                 <div className="relative">
                   <Calendar className="absolute left-3 top-3.5 text-slate-400 w-4 h-4" />
                   <input
-                    type={formData.date ? "date" : "text"}
+                    type="date"
                     name="date"
                     value={formData.date}
                     onChange={handleInputChange}
-                    placeholder={t('Select Date')}
-                    onFocus={(e) => (e.target.type = 'date')}
-                    onBlur={(e) => { if (!e.target.value) e.target.type = 'text'; }}
-                    className={`${inputCls} pr-4`}
+                    onKeyDown={(e) => e.preventDefault()}
+                    onClick={(e) => { try { e.target.showPicker(); } catch(err) {} }}
+                    className={`${inputCls} pr-4 ${!formData.date ? 'text-slate-400' : 'text-slate-800'}`}
                     required
                   />
                 </div>
                 <div className="relative">
                   <Clock className="absolute left-3 top-3.5 text-slate-400 w-4 h-4" />
                   <input
-                    type={formData.time ? "time" : "text"}
+                    type="time"
                     name="time"
                     value={formData.time}
                     onChange={handleInputChange}
-                    placeholder={t('Select Time')}
-                    onFocus={(e) => (e.target.type = 'time')}
-                    onBlur={(e) => { if (!e.target.value) e.target.type = 'text'; }}
-                    className={`${inputCls} pr-4`}
+                    onKeyDown={(e) => e.preventDefault()}
+                    onClick={(e) => { try { e.target.showPicker(); } catch(err) {} }}
+                    className={`${inputCls} pr-4 ${!formData.time ? 'text-slate-400' : 'text-slate-800'}`}
                     required
                   />
                 </div>

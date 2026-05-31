@@ -6,10 +6,10 @@ import BookingModal from '../BookingModal';
 import { getPackageImage } from '../../utils/imageImports';
 
 const defaultPackages = [
-  { name: 'Madurai Local Tour', duration: '8 Hours / 80 KM', places: 'Meenakshi Temple, Thirumalai Nayakkar Mahal, Gandhi Museum', price: '₹1600', image: 'meenakshi_bg.png' },
-  { name: 'Rameswaram Tour', duration: '12 Hours / 300 KM', places: 'Ramanathaswamy Temple, Dhanushkodi, Agniteertham, Pamban Bridge', price: '₹3500', image: 'rameswaram_bg.png' },
-  { name: 'Kodaikanal Tour', duration: '2 Days / 500 KM', places: 'Kodaikanal Lake, Coaker\'s Walk, Bryant Park, Pine Forest, Pillar Rocks', price: '₹6500', image: 'kodaikanal_bg.png' },
-  { name: 'Ooty Tour', duration: '2 Days / 550 KM', places: 'Ooty Lake, Botanical Garden, Doddabetta Peak, Pykara Falls', price: '₹7000', image: 'ooty_bg.png' }
+  { name: 'Madurai Local Tour', duration: '8 Hours / 80 KM', places: 'Meenakshi Temple, Thirumalai Nayakkar Mahal, Gandhi Museum', price: '₹2600', image: 'meenakshi_bg.png' },
+  { name: 'Rameswaram Tour', duration: '12 Hours / 420 KM', places: 'Ramanathaswamy Temple, Dhanushkodi, Agniteertham, Pamban Bridge', price: '₹6000', image: 'rameswaram_bg.png' },
+  { name: 'Kodaikanal Tour', duration: '12 Hours / 300 KM', places: 'Kodaikanal Lake, Coaker\'s Walk, Bryant Park, Pine Forest, Pillar Rocks', price: '₹5000', image: 'kodaikanal_bg.png' },
+  { name: 'Ooty Tour', duration: '2 Days / 600 KM', places: 'Ooty Lake, Botanical Garden, Doddabetta Peak, Pykara Falls', price: '₹11000', image: 'ooty_bg.png' }
 ];
 
 export default function TabletPackages() {

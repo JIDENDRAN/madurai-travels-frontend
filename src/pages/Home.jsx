@@ -29,8 +29,8 @@ const defaultVehicles = [
     name: 'Swift Dzire',
     seats: '4 Seater',
     ac: 'AC',
-    price: '₹13/km',
-    desc: '[Outstation Plan]\nRate: ₹13/km\nMin Distance: Above 300 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nDistance Limit: Up to 250 km\nBase Rent: ₹1500\nPer km Charge: ₹10/km\nDriver Charge: ₹300',
+    price: '₹14/km',
+    desc: '[Outstation Plan]\nRate: ₹14/km\nMin Distance: Above 250 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nBase Rent: ₹1600\nPer km Charge: ₹11/km\nDriver Charge: ₹300',
     image: 'sedan_cab-removebg-preview.png',
     bgImage: 'kanyakumari_bg.png'
   },
@@ -38,8 +38,8 @@ const defaultVehicles = [
     name: 'Maruti Ciaz Premium Sedan',
     seats: '4 Seater',
     ac: 'AC',
-    price: '₹13/km',
-    desc: '[Outstation Plan]\nRate: ₹13/km\nMin Distance: Above 250 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nBase Rent: ₹1500/day\nPer km Charge: ₹10/km',
+    price: '₹15/km',
+    desc: '[Outstation Plan]\nRate: ₹15/km\nMin Distance: Above 250 km\nDriver Charge: ₹300/day\n\n[Day Rental Plan]\nBase Rent: ₹1700/day\nPer km Charge: ₹10/km',
     image: 'sedan_cab-removebg-preview.png',
     bgImage: 'munnar_bg.png'
   },
@@ -47,8 +47,8 @@ const defaultVehicles = [
     name: 'Prime SUV',
     seats: '7 Seater',
     ac: 'AC',
-    price: '₹18/km',
-    desc: '[Outstation Plan]\nRate: ₹18/km\nMin Distance: Above 300 km\nDriver Charge: ₹400/day\n\n[Day Rental Plan]\nBase Rent: ₹2300/day\nPer km Charge: ₹13/km\nDriver Charge: ₹400/day',
+    price: '₹19/km',
+    desc: '[Outstation Plan]\nRate: ₹19/km\nMin Distance: Above 300 km\nDriver Charge: ₹400/day\n\n[Day Rental Plan]\nBase Rent: ₹2300/day\nPer km Charge: ₹13/km\nDriver Charge: ₹400/day',
     image: 'suv-removebg-preview.png',
     bgImage: 'thirumalai_mahal_bg.png'
   },
@@ -82,10 +82,10 @@ const defaultVehicles = [
 ];
 
 const defaultPackages = [
-  { name: 'Madurai Local Tour', duration: '8 Hours / 80 KM', places: 'Meenakshi Temple, Thirumalai Nayakkar Mahal, Gandhi Museum', price: '₹1600', image: 'meenakshi_bg.png' },
-  { name: 'Rameswaram Tour', duration: '12 Hours / 300 KM', places: 'Ramanathaswamy Temple, Dhanushkodi, Agniteertham, Pamban Bridge', price: '₹3500', image: 'rameswaram_bg.png' },
-  { name: 'Kodaikanal Tour', duration: '2 Days / 500 KM', places: 'Kodaikanal Lake, Coaker\'s Walk, Bryant Park, Pine Forest, Pillar Rocks', price: '₹6500', image: 'kodaikanal_bg.png' },
-  { name: 'Ooty Tour', duration: '2 Days / 550 KM', places: 'Ooty Lake, Botanical Garden, Doddabetta Peak, Pykara Falls', price: '₹7000', image: 'ooty_bg.png' }
+  { name: 'Madurai Local Tour', duration: '8 Hours / 80 KM', places: 'Meenakshi Temple, Thirumalai Nayakkar Mahal, Gandhi Museum', price: '₹2600', image: 'meenakshi_bg.png' },
+  { name: 'Rameswaram Tour', duration: '12 Hours / 420 KM', places: 'Ramanathaswamy Temple, Dhanushkodi, Agniteertham, Pamban Bridge', price: '₹6000', image: 'rameswaram_bg.png' },
+  { name: 'Kodaikanal Tour', duration: '12 Hours / 300 KM', places: 'Kodaikanal Lake, Coaker\'s Walk, Bryant Park, Pine Forest, Pillar Rocks', price: '₹5000', image: 'kodaikanal_bg.png' },
+  { name: 'Ooty Tour', duration: '2 Days / 600 KM', places: 'Ooty Lake, Botanical Garden, Doddabetta Peak, Pykara Falls', price: '₹11000', image: 'ooty_bg.png' }
 ];
 
 const reviewsData = [
@@ -739,7 +739,9 @@ const Home = () => {
                         name="date"
                         value={formData.date}
                         onChange={handleInputChange}
-                        className="w-full pl-10 pr-3 py-3 rounded-xl bg-white border border-slate-200 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm transition-all text-slate-900 outline-none"
+                        onKeyDown={(e) => e.preventDefault()}
+                        onClick={(e) => { try { e.target.showPicker(); } catch(err) {} }}
+                        className={`w-full pl-10 pr-3 py-3 rounded-xl bg-white border border-slate-200 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm transition-all outline-none ${!formData.date ? 'text-slate-400' : 'text-slate-900'}`}
                         required
                       />
                     </div>
@@ -750,7 +752,9 @@ const Home = () => {
                         name="time"
                         value={formData.time}
                         onChange={handleInputChange}
-                        className="w-full pl-10 pr-3 py-3 rounded-xl bg-white border border-slate-200 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm transition-all text-slate-900 outline-none"
+                        onKeyDown={(e) => e.preventDefault()}
+                        onClick={(e) => { try { e.target.showPicker(); } catch(err) {} }}
+                        className={`w-full pl-10 pr-3 py-3 rounded-xl bg-white border border-slate-200 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm transition-all outline-none ${!formData.time ? 'text-slate-400' : 'text-slate-900'}`}
                         required
                       />
                     </div>

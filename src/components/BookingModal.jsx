@@ -348,11 +348,11 @@ const BookingModal = ({ isOpen, onClose, defaultVehicle, defaultPackage }) => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="relative">
                       <Calendar className="absolute left-3 top-3.5 text-slate-400 w-5 h-5" />
-                      <input type="date" name="date" value={formData.date} onChange={handleInputChange} className="w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-slate-200 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all outline-none" required />
+                      <input type="date" name="date" value={formData.date} onChange={handleInputChange} onKeyDown={(e) => e.preventDefault()} onClick={(e) => { try { e.target.showPicker(); } catch(err) {} }} className={`w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-slate-200 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all outline-none ${!formData.date ? 'text-slate-400' : 'text-slate-900'}`} required />
                     </div>
                     <div className="relative">
                       <Clock className="absolute left-3 top-3.5 text-slate-400 w-5 h-5" />
-                      <input type="time" name="time" value={formData.time} onChange={handleInputChange} className="w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-slate-200 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all outline-none" required />
+                      <input type="time" name="time" value={formData.time} onChange={handleInputChange} onKeyDown={(e) => e.preventDefault()} onClick={(e) => { try { e.target.showPicker(); } catch(err) {} }} className={`w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-slate-200 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all outline-none ${!formData.time ? 'text-slate-400' : 'text-slate-900'}`} required />
                     </div>
                   </div>
 
