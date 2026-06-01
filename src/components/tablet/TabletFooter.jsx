@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo.png';
 
 export default function TabletFooter() {
   const { t } = useTranslation();
@@ -34,7 +35,7 @@ export default function TabletFooter() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-yellow-500" />
-                <span>+91 99432 23938</span>
+                <span>+91 96293 73701</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-yellow-500" />
@@ -49,12 +50,26 @@ export default function TabletFooter() {
         </div>
 
         {/* Bottom copyright */}
-        <div className="border-t border-slate-800 pt-6 flex justify-between items-center text-xs text-slate-300">
-          <p>© 2026 Madurai Tour Taxi. All Rights Reserved.</p>
-          <div className="flex space-x-3">
-            <a href="#" className="hover:text-white transition-colors">{t('Privacy Policy')}</a>
-            <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">{t('Terms & Conditions')}</a>
+        <div className="border-t border-slate-800 pt-6 flex flex-col gap-4 text-xs text-slate-300">
+          <div className="flex justify-between items-center">
+            <p>© 2026 Madurai Tour Taxi. All Rights Reserved.</p>
+            <div className="flex space-x-3">
+              <a href="#" className="hover:text-white transition-colors">{t('Privacy Policy')}</a>
+              <span>|</span>
+              <a href="#" className="hover:text-white transition-colors">{t('Terms & Conditions')}</a>
+              <span>|</span>
+              <a href="/admin" className="hover:text-white transition-colors">Admin</a>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-4 border-t border-slate-800/50">
+            <span>Designed & Developed by</span>
+            <a href="https://codethriveinfotech.in/" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity group">
+              <img src={logo} alt="Code Thrive InfoTech" className="h-5 w-auto" />
+              <span className="font-bold tracking-wider text-white group-hover:text-yellow-500 group-hover:underline underline-offset-4 transition-colors">CODE THRIVE INFOTECH</span>
+            </a>
+            <a href="https://codethriveinfotech.in/" target="_blank" rel="noreferrer" className="ml-2 px-2 py-1 bg-yellow-500/10 border border-yellow-500 hover:bg-yellow-500 text-yellow-500 hover:text-slate-900 rounded animate-pulse hover:animate-none transition-all shadow-[0_0_10px_rgba(234,179,8,0.2)] text-[10px] font-bold uppercase tracking-wider">
+              Click to create your website
+            </a>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo.png';
 
 const FacebookIcon = ({ className }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -36,7 +37,7 @@ const Footer = () => {
               <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-yellow-500 hover:text-slate-900 transition-colors">
                 <InstagramIcon className="w-5 h-5" />
               </a>
-              <a href="https://wa.me/919943223938" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 hover:text-white transition-colors">
+              <a href="https://wa.me/919629373701" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 hover:text-white transition-colors">
                 <Phone className="w-5 h-5" />
               </a>
             </div>
@@ -78,7 +79,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-yellow-500 shrink-0 mt-0.5" />
-                <span className="text-sm">+91 99432 23938</span>
+                <span className="text-sm">+91 96293 73701</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-yellow-500 shrink-0 mt-0.5" />
@@ -94,15 +95,49 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-slate-300 mb-4 md:mb-0">
-            © 2026 Madurai Tour Taxi. All Rights Reserved.
-          </p>
-          <div className="flex space-x-4 text-sm text-slate-300">
-            <a href="#" className="hover:text-white transition-colors">{t('Privacy Policy')}</a>
-            <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">{t('Terms & Conditions')}</a>
+        <div className="border-t border-slate-800 pt-8 flex flex-col xl:flex-row justify-between items-center xl:items-start text-sm text-slate-300 gap-6 xl:gap-0 w-full">
+          
+          {/* Left Side */}
+          <div className="flex flex-col items-center xl:items-start gap-1 whitespace-nowrap">
+            <p>© 2026 Madurai Tour Taxi.</p>
+            <p>All Rights Reserved.</p>
           </div>
+
+          {/* Divider */}
+          <div className="hidden xl:block w-px h-10 bg-slate-700 mx-4"></div>
+
+          {/* Left Middle */}
+          <div className="flex flex-col items-center xl:items-start gap-1 whitespace-nowrap">
+            <span>Designed & Developed by</span>
+            <a href="https://codethriveinfotech.in/" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity group mt-0.5">
+              <img src={logo} alt="Code Thrive InfoTech" className="h-6 w-auto" />
+              <span className="font-bold tracking-wider text-white group-hover:text-yellow-500 group-hover:underline underline-offset-4 transition-colors">CODE THRIVE INFOTECH</span>
+            </a>
+          </div>
+
+          {/* Divider */}
+          <div className="hidden xl:block w-px h-10 bg-slate-700 mx-4"></div>
+
+          {/* Right Middle */}
+          <div className="flex items-center justify-center whitespace-nowrap xl:pt-2">
+            <a href="https://codethriveinfotech.in/" target="_blank" rel="noreferrer" className="px-4 py-2 bg-yellow-500/10 border border-yellow-500 hover:bg-yellow-500 text-yellow-500 hover:text-slate-900 rounded animate-pulse hover:animate-none transition-all shadow-[0_0_10px_rgba(234,179,8,0.2)] text-xs font-bold uppercase tracking-wider">
+              Click to create your website
+            </a>
+          </div>
+
+          {/* Divider */}
+          <div className="hidden xl:block w-px h-10 bg-slate-700 mx-4"></div>
+
+          {/* Right Side */}
+          <div className="flex flex-col items-center xl:items-end gap-2 whitespace-nowrap">
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-white transition-colors">{t('Privacy Policy')}</a>
+              <span>|</span>
+              <a href="#" className="hover:text-white transition-colors">{t('Terms & Conditions')}</a>
+            </div>
+            <a href="/admin" className="hover:text-white transition-colors">Admin</a>
+          </div>
+
         </div>
       </div>
     </footer>
