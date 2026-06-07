@@ -49,23 +49,23 @@ export default function MobileContact() {
 
       {/* Quick Contact Cards */}
       <div className="px-4 -mt-5 space-y-3 max-w-md mx-auto">
-        <a href="tel:9629373701" className="bg-white p-4 rounded-2xl shadow border border-slate-100 flex items-center gap-4 active:border-yellow-400 transition-colors">
+        <a href="tel:8667520367" className="bg-white p-4 rounded-2xl shadow border border-slate-100 flex items-center gap-4 active:border-yellow-400 transition-colors">
           <div className="w-10 h-10 bg-yellow-50 rounded-xl flex items-center justify-center shrink-0">
             <Phone className="w-5 h-5 text-yellow-600" />
           </div>
           <div>
             <h3 className="text-sm font-bold text-slate-900">{t('Call Us')}</h3>
-            <p className="text-xs text-slate-500">+91 96293 73701</p>
+            <p className="text-xs text-slate-500">+91 86675 20367</p>
           </div>
         </a>
 
-        <a href="https://wa.me/919629373701" target="_blank" rel="noopener noreferrer" className="bg-white p-4 rounded-2xl shadow border border-slate-100 flex items-center gap-4 active:border-green-500 transition-colors">
+        <a href="https://wa.me/918667520367" target="_blank" rel="noopener noreferrer" className="bg-white p-4 rounded-2xl shadow border border-slate-100 flex items-center gap-4 active:border-green-500 transition-colors">
           <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center shrink-0">
             <MessageCircle className="w-5 h-5 text-green-600" />
           </div>
           <div>
             <h3 className="text-sm font-bold text-slate-900">{t('WhatsApp')}</h3>
-            <p className="text-xs text-slate-500">+91 96293 73701</p>
+            <p className="text-xs text-slate-500">+91 86675 20367</p>
           </div>
         </a>
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Phone, MessageCircle } from 'lucide-react';
 
 export default function FloatingButtons() {
-  const adminNumber = '9629373701';
+  const adminNumber = '8667520367';
   const whatsappUrl = `https://wa.me/91${adminNumber}?text=Hello%2C%20I%20want%20to%20book%20a%20taxi%20with%20Madurai%20Tour%20Taxi.`;
 
   return (

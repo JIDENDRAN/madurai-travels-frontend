@@ -478,7 +478,7 @@ const Home = () => {
 
   const openWhatsApp = (e) => {
     if (e) e.preventDefault();
-    window.open('https://wa.me/919629373701?text=I%20want%20to%20book%20a%20taxi.', '_blank');
+    window.open('https://wa.me/918667520367?text=I%20want%20to%20book%20a%20taxi.', '_blank');
   };
 
   const openBookingModal = (type, value) => {
@@ -598,11 +598,11 @@ const Home = () => {
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 mb-6 w-full">
                 <a
-                  href="tel:9629373701"
+                  href="tel:8667520367"
                   className="shine-effect flex items-center justify-center gap-2.5 px-6 py-3.5 sm:px-8 sm:py-4 bg-gradient-to-r from-yellow-400 via-amber-400 to-amber-500 text-slate-950 rounded-full font-black hover:scale-105 transition-all shadow-[0_10px_30px_rgba(250,204,21,0.45)] border border-yellow-300/20 text-xs sm:text-sm md:text-base font-poppins"
                 >
                   <PhoneCall className="w-4 h-4 sm:w-5 sm:h-5" />
-                  +91 96293 73701
+                  +91 86675 20367
                 </a>
                 <button
                   onClick={openWhatsApp}

@@ -131,7 +131,7 @@ export default function MobileHero() {
       setIsSuccess(true);
       const text = `*New Booking Request*\n\nFrom: ${formData.fromLocation}\nTo: ${formData.toLocation}\nDate: ${formData.date}\nTime: ${formData.time}\nVehicle: ${formData.vehicle}\nPackage: ${formData.packageType}\n\n*Customer:*\nName: ${formData.name}\nPhone: ${formData.phone}`;
       setTimeout(() => {
-        window.open(`https://wa.me/919629373701?text=${encodeURIComponent(text)}`, '_blank');
+        window.open(`https://wa.me/918667520367?text=${encodeURIComponent(text)}`, '_blank');
         setIsSuccess(false);
         setFormData({ fromLocation: '', toLocation: '', date: '', time: '', name: '', phone: '', vehicle: 'Select Vehicle', packageType: 'Custom Trip' });
       }, 3000);
@@ -306,12 +306,12 @@ export default function MobileHero() {
 
         {/* Call & WhatsApp buttons below form */}
         <div className="grid grid-cols-2 gap-3 mt-3">
-          <a href="tel:9629373701"
+          <a href="tel:8667520367"
             className="flex items-center justify-center gap-1.5 bg-slate-900/80 backdrop-blur-sm text-white border border-white/20 py-2.5 px-4 rounded-full text-xs font-bold">
             <PhoneCall className="w-3.5 h-3.5 text-yellow-400" />
             <span>{t('Call Now')}</span>
           </a>
-          <a href="https://wa.me/919629373701" target="_blank" rel="noopener noreferrer"
+          <a href="https://wa.me/918667520367" target="_blank" rel="noopener noreferrer"
             className="flex items-center justify-center gap-1.5 bg-green-600/90 backdrop-blur-sm text-white border border-green-500/20 py-2.5 px-4 rounded-full text-xs font-bold">
             <MessageCircle className="w-3.5 h-3.5" />
             <span>WhatsApp</span>

@@ -90,14 +90,14 @@ export default function TabletHero() {
           
           <div className="flex flex-col space-y-2">
             <a
-              href="tel:9629373701"
+              href="tel:8667520367"
               className="flex items-center justify-center gap-2 bg-slate-900/90 text-white py-2.5 px-4 rounded-xl text-xs font-bold border border-white/10 transition-colors hover:bg-slate-800"
             >
               <PhoneCall className="w-4 h-4 text-yellow-400" />
-              <span>{t('Call Us')}: +91 96293 73701</span>
+              <span>{t('Call Us')}: +91 86675 20367</span>
             </a>
             <a
-              href="https://wa.me/919629373701"
+              href="https://wa.me/918667520367"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-green-600/90 text-white py-2.5 px-4 rounded-xl text-xs font-bold border border-green-500/20 transition-colors hover:bg-green-700"

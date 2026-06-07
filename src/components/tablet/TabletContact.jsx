@@ -31,7 +31,7 @@ export default function TabletContact() {
 
         // Trigger WhatsApp
         const text = `*New Contact Query*\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nMessage: ${formData.message}`;
-        window.open(`https://wa.me/919629373701?text=${encodeURIComponent(text)}`, '_blank');
+        window.open(`https://wa.me/918667520367?text=${encodeURIComponent(text)}`, '_blank');
 
         setFormData({ name: '', phone: '', email: '', message: '' });
       } else {
@@ -65,15 +65,15 @@ export default function TabletContact() {
               <Phone className="w-5 h-5 text-yellow-500 shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-bold text-slate-900 text-sm">{t('Call Us')}</h4>
-                <a href="tel:9629373701" className="text-sm font-semibold text-slate-700 hover:text-yellow-500 transition-colors">+91 96293 73701</a>
+                <a href="tel:8667520367" className="text-sm font-semibold text-slate-700 hover:text-yellow-500 transition-colors">+91 86675 20367</a>
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-4 cursor-pointer" onClick={() => window.open('https://wa.me/919629373701', '_blank')}>
+            <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-4 cursor-pointer" onClick={() => window.open('https://wa.me/918667520367', '_blank')}>
               <MessageCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-bold text-slate-900 text-sm">{t('WhatsApp')}</h4>
-                <span className="text-sm font-semibold text-slate-700 hover:text-green-500 transition-colors">+91 96293 73701</span>
+                <span className="text-sm font-semibold text-slate-700 hover:text-green-500 transition-colors">+91 86675 20367</span>
               </div>
             </div>
 

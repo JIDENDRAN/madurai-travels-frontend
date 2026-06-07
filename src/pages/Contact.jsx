@@ -77,18 +77,18 @@ const Contact = () => {
               <div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">{t('Call Us')}</h3>
                 <p className="text-slate-500 mb-1">{t('For immediate bookings')}</p>
-                <a href="tel:9629373701" className="text-lg font-bold text-slate-900 hover:text-yellow-500">+91 96293 73701</a>
+                <a href="tel:8667520367" className="text-lg font-bold text-slate-900 hover:text-yellow-500">+91 86675 20367</a>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex items-start gap-6 hover:border-green-500 transition-colors group cursor-pointer" onClick={() => window.open('https://wa.me/919629373701', '_blank')}>
+            <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex items-start gap-6 hover:border-green-500 transition-colors group cursor-pointer" onClick={() => window.open('https://wa.me/918667520367', '_blank')}>
               <div className="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-green-500 transition-colors">
                 <MessageCircle className="w-6 h-6 text-green-600 group-hover:text-white" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">{t('WhatsApp')}</h3>
                 <p className="text-slate-500 mb-1">{t('Fastest way to reach us')}</p>
-                <span className="text-lg font-bold text-slate-900 group-hover:text-green-500">+91 96293 73701</span>
+                <span className="text-lg font-bold text-slate-900 group-hover:text-green-500">+91 86675 20367</span>
               </div>
             </div>
 

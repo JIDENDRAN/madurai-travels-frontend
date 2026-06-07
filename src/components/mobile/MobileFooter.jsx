@@ -32,7 +32,7 @@ export default function MobileFooter() {
           <div className="space-y-3 text-xs text-left max-w-[260px]">
             <div className="flex items-center gap-3">
               <Phone className="w-4 h-4 text-yellow-500 shrink-0" />
-              <span>+91 96293 73701</span>
+              <span>+91 86675 20367</span>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-4 h-4 text-yellow-500 shrink-0" />

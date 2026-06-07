@@ -35,7 +35,7 @@ const Footer = () => {
               <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-yellow-500 hover:text-slate-900 transition-colors">
                 <InstagramIcon className="w-5 h-5" />
               </a>
-              <a href="https://wa.me/919629373701" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 hover:text-white transition-colors">
+              <a href="https://wa.me/918667520367" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 hover:text-white transition-colors">
                 <Phone className="w-5 h-5" />
               </a>
             </div>
@@ -71,7 +71,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-yellow-500 shrink-0 mt-0.5" />
-                <span className="text-sm">+91 96293 73701</span>
+                <span className="text-sm">+91 86675 20367</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-yellow-500 shrink-0 mt-0.5" />
