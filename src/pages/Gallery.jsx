@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -32,6 +32,15 @@ import heroBg from '../assets/meenakshi_desktop.png';
 
 const Gallery = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('config', 'AW-18225094695', {
+        page_path: window.location.pathname,
+      });
+    }
+  }, []);
+
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 

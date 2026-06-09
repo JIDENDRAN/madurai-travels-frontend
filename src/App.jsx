@@ -20,6 +20,15 @@ const AppContent = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Track page views on route change for Google Tag
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('config', 'AW-18225094695', {
+        page_path: location.pathname + location.search,
+      });
+    }
+  }, [location]);
+
   return (
     <div className="app-wrapper">
       <AnimatePresence mode="wait">

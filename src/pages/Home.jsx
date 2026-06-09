@@ -176,6 +176,15 @@ const AnimatedCounter = ({ end, duration = 2, label, suffix = '+' }) => {
 
 const Home = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('config', 'AW-18225094695', {
+        page_path: window.location.pathname,
+      });
+    }
+  }, []);
+
   const { scrollY } = useScroll();
   const yBg = useTransform(scrollY, [0, 1000], ["0%", "18%"]);
 

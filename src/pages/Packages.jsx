@@ -24,6 +24,15 @@ import { getPackageImage } from '../utils/imageImports';
 
 const Packages = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('config', 'AW-18225094695', {
+        page_path: window.location.pathname,
+      });
+    }
+  }, []);
+
   const [packages, setPackages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [modalData, setModalData] = useState({ isOpen: false, packageType: '' });

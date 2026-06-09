@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Award, ThumbsUp, Heart } from 'lucide-react';
@@ -6,6 +6,14 @@ import maduraivideo from '../assets/maduraivideo.mp4';
 
 const About = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('config', 'AW-18225094695', {
+        page_path: window.location.pathname,
+      });
+    }
+  }, []);
 
   return (
     <div className="bg-slate-50 min-h-screen">

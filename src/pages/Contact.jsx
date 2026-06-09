@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Send, MessageCircle } from 'lucide-react';
@@ -6,6 +6,15 @@ import API_BASE_URL from '../apiConfig';
 
 const Contact = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('config', 'AW-18225094695', {
+        page_path: window.location.pathname,
+      });
+    }
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',

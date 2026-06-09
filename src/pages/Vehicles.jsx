@@ -312,6 +312,15 @@ const VehicleCard = ({ v, index }) => {
 
 const Vehicles = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('config', 'AW-18225094695', {
+        page_path: window.location.pathname,
+      });
+    }
+  }, []);
+
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);
 
