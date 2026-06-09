@@ -147,6 +147,39 @@ const reviewsData = [
   }
 ];
 
+const parseDesc = (desc) => {
+  if (!desc) return null;
+  
+  if (!desc.includes('[Outstation Plan]') && !desc.includes('[Day Rental Plan]')) {
+    return { isStructured: false, text: desc };
+  }
+  
+  const result = {
+    isStructured: true,
+    outstation: {},
+    dayRent: {}
+  };
+  
+  const sections = desc.split(/\[(.*?)\]/);
+  for (let i = 1; i < sections.length; i += 2) {
+    const title = sections[i].trim();
+    const content = sections[i + 1] || '';
+    const lines = content.split('\n').map(l => l.trim()).filter(Boolean);
+    
+    const target = title.includes('Outstation') ? result.outstation : result.dayRent;
+    
+    lines.forEach(line => {
+      const parts = line.split(':');
+      if (parts.length >= 2) {
+        const key = parts[0].trim();
+        const value = parts.slice(1).join(':').trim();
+        target[key] = value;
+      }
+    });
+  }
+  
+  return result;
+};
 
 const AnimatedCounter = ({ end, duration = 2, label, suffix = '+' }) => {
   const [count, setCount] = useState(0);
@@ -829,16 +862,18 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {vehicles.map((vehicle, idx) => (
+            {vehicles.map((vehicle, idx) => {
+              const parsed = parseDesc(vehicle.desc);
+              return (
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 key={idx}
-                className="bg-white rounded-3xl border border-slate-100 shadow-[0_10px_40px_rgb(0,0,0,0.05)] overflow-hidden group card-3d-lift"
+                className="bg-white rounded-3xl border border-slate-100 shadow-[0_10px_40px_rgb(0,0,0,0.05)] overflow-hidden group card-3d-lift flex flex-col"
               >
-                <div className="h-72 overflow-hidden relative flex items-center justify-center p-6 select-none bg-slate-950">
+                <div className="h-72 overflow-hidden relative flex items-center justify-center p-6 select-none bg-slate-950 shrink-0">
                   {/* Natural Scenic Background Image */}
                   <img
                     src={getBgImage(vehicle.bgImage)}
@@ -871,14 +906,60 @@ const Home = () => {
                     />
                   </div>
                 </div>
-                <div className="p-8">
+                <div className="p-8 flex flex-col flex-grow">
                   <h3 className="text-2xl font-poppins font-bold text-slate-900 mb-3">{t(vehicle.name)}</h3>
-                  <div className="flex flex-wrap gap-2 text-sm text-slate-600 mb-6">
+                  <div className="flex flex-wrap gap-2 text-sm text-slate-600 mb-4">
                     <span className="flex items-center gap-1.5 bg-slate-100 px-3 py-1 rounded-md font-medium"><Users className="w-4 h-4 text-slate-500" /> {t(vehicle.seats)}</span>
                     <span className="flex items-center gap-1.5 bg-slate-100 px-3 py-1 rounded-md font-medium"><Wind className="w-4 h-4 text-sky-500 animate-pulse" /> {t(vehicle.ac)}</span>
-                    <span className="flex items-center gap-1.5 bg-slate-100 px-3 py-1 rounded-md font-medium"><Music className="w-4 h-4 text-indigo-500" /> {t(vehicle.desc.split(',')[0])}</span>
                   </div>
-                  <div className="flex justify-between items-center pt-4 border-t border-slate-100">
+                  
+                  <div className="flex-grow">
+                    {parsed && parsed.isStructured ? (
+                      <div className="flex flex-col gap-3 mb-6">
+                        {/* Outstation Plan */}
+                        {Object.keys(parsed.outstation).length > 0 && (
+                          <div className="bg-gradient-to-br from-slate-50 to-slate-100/50 rounded-2xl p-4 border border-slate-100/80 shadow-sm relative overflow-hidden group/plan hover:border-yellow-400/40 hover:from-white hover:to-white transition-all duration-300">
+                            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-yellow-400/5 to-transparent rounded-full -mr-6 -mt-6 transition-transform group-hover/plan:scale-125 pointer-events-none" />
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5 flex items-center gap-1.5 pointer-events-none">
+                              <span className="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+                              {t('Outstation Plan')}
+                            </h4>
+                            <div className="space-y-1.5">
+                              {Object.entries(parsed.outstation).map(([key, value]) => (
+                                <div key={key} className="flex justify-between items-center text-xs">
+                                  <span className="text-slate-500 font-medium">{t(key)}</span>
+                                  <span className="font-semibold text-slate-800 bg-slate-100/80 px-2 py-0.5 rounded border border-slate-200/20">{t(value)}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Day Rental Plan */}
+                        {Object.keys(parsed.dayRent).length > 0 && (
+                          <div className="bg-gradient-to-br from-slate-50 to-slate-100/50 rounded-2xl p-4 border border-slate-100/80 shadow-sm relative overflow-hidden group/plan hover:border-green-400/40 hover:from-white hover:to-white transition-all duration-300">
+                            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-400/5 to-transparent rounded-full -mr-6 -mt-6 transition-transform group-hover/plan:scale-125 pointer-events-none" />
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5 flex items-center gap-1.5 pointer-events-none">
+                              <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                              {t('Day Rental Plan')}
+                            </h4>
+                            <div className="space-y-1.5">
+                              {Object.entries(parsed.dayRent).map(([key, value]) => (
+                                <div key={key} className="flex justify-between items-center text-xs">
+                                  <span className="text-slate-500 font-medium">{t(key)}</span>
+                                  <span className="font-semibold text-slate-800 bg-slate-100/80 px-2 py-0.5 rounded border border-slate-200/20">{t(value)}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <p className="text-slate-600 mb-6 text-sm">{t(vehicle.desc)}</p>
+                    )}
+                  </div>
+
+                  <div className="flex justify-between items-center pt-4 border-t border-slate-100 mt-auto">
                     <div>
                       <p className="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">{t('Starting from')}</p>
                       <p className="text-2xl font-bold text-slate-900">{vehicle.price}</p>
@@ -889,7 +970,8 @@ const Home = () => {
                   </div>
                 </div>
               </motion.div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </motion.section>
