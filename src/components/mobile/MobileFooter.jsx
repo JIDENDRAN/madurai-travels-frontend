@@ -36,7 +36,7 @@ export default function MobileFooter() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-4 h-4 text-yellow-500 shrink-0" />
-              <span>info@maduraitourtaxi.com</span>
+              <span>maduraitourtaxi1@gmail.com</span>
             </div>
             <div className="flex items-start gap-3 text-slate-200">
               <MapPin className="w-4 h-4 text-yellow-500 shrink-0 mt-0.5" />

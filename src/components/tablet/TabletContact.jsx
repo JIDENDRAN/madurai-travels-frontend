@@ -81,7 +81,7 @@ export default function TabletContact() {
               <Mail className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-bold text-slate-900 text-sm">{t('Email Us')}</h4>
-                <a href="mailto:info@maduraitourtaxi.com" className="text-sm font-semibold text-slate-700 hover:text-blue-555 transition-colors">info@maduraitourtaxi.com</a>
+                <a href="mailto:maduraitourtaxi1@gmail.com" className="text-sm font-semibold text-slate-700 hover:text-blue-555 transition-colors">maduraitourtaxi1@gmail.com</a>
               </div>
             </div>
 

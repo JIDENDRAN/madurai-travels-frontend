@@ -53,35 +53,7 @@ export default function MobileHero() {
     return () => window.removeEventListener('select-booking-item', handleItemSelect);
   }, []);
 
-  // Google Places autocomplete
-  useEffect(() => {
-    const init = () => {
-      if (!window.google?.maps?.places) return;
-      if (pickupRef.current) {
-        const ac = new window.google.maps.places.Autocomplete(pickupRef.current, { types: ['geocode', 'establishment'] });
-        ac.addListener('place_changed', () => {
-          const p = ac.getPlace();
-          setFormData(prev => ({ ...prev, fromLocation: p.formatted_address || p.name || pickupRef.current.value }));
-        });
-      }
-      if (dropRef.current) {
-        const ac = new window.google.maps.places.Autocomplete(dropRef.current, { types: ['geocode', 'establishment'] });
-        ac.addListener('place_changed', () => {
-          const p = ac.getPlace();
-          setFormData(prev => ({ ...prev, toLocation: p.formatted_address || p.name || dropRef.current.value }));
-        });
-      }
-    };
-    if (window.google?.maps?.places) { init(); return; }
-    const existing = document.getElementById('google-maps-api-script');
-    if (existing) { existing.addEventListener('load', init); return; }
-    const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
-    const script = document.createElement('script');
-    script.id = 'google-maps-api-script';
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
-    script.async = true; script.defer = true; script.onload = init;
-    document.head.appendChild(script);
-  }, []);
+
 
   const detectLocation = (type) => {
     const isPickup = type === 'pickup';

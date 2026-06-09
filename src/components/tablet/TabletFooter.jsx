@@ -39,7 +39,7 @@ export default function TabletFooter() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-yellow-500" />
-                <span>info@maduraitourtaxi.com</span>
+                <span>maduraitourtaxi1@gmail.com</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-yellow-500 shrink-0 mt-0.5" />

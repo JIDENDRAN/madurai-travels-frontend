@@ -285,61 +285,7 @@ const Home = () => {
   const [loadingPickup, setLoadingPickup] = useState(false);
   const [loadingDrop, setLoadingDrop] = useState(false);
 
-  useEffect(() => {
-    if (window.google && window.google.maps && window.google.maps.places) {
-      initAutocomplete();
-      return;
-    }
 
-    const existingScript = document.getElementById('google-maps-api-script');
-    if (existingScript) {
-      existingScript.addEventListener('load', () => {
-        initAutocomplete();
-      });
-      return;
-    }
-
-    const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
-    const script = document.createElement('script');
-    script.id = 'google-maps-api-script';
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
-    script.async = true;
-    script.defer = true;
-    script.onload = () => {
-      initAutocomplete();
-    };
-    document.head.appendChild(script);
-  }, []);
-
-  const initAutocomplete = () => {
-    if (!window.google || !window.google.maps || !window.google.maps.places) return;
-
-    if (pickupInputRef.current) {
-      const autocompletePickup = new window.google.maps.places.Autocomplete(pickupInputRef.current, {
-        types: ['geocode', 'establishment']
-      });
-      autocompletePickup.addListener('place_changed', () => {
-        const place = autocompletePickup.getPlace();
-        setFormData(prev => ({
-          ...prev,
-          fromLocation: place.formatted_address || place.name || pickupInputRef.current.value
-        }));
-      });
-    }
-
-    if (dropInputRef.current) {
-      const autocompleteDrop = new window.google.maps.places.Autocomplete(dropInputRef.current, {
-        types: ['geocode', 'establishment']
-      });
-      autocompleteDrop.addListener('place_changed', () => {
-        const place = autocompleteDrop.getPlace();
-        setFormData(prev => ({
-          ...prev,
-          toLocation: place.formatted_address || place.name || dropInputRef.current.value
-        }));
-      });
-    }
-  };
 
   const detectLocation = async (type) => {
     const isPickup = type === 'pickup';

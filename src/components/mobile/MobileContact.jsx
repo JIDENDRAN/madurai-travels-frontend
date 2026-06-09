@@ -75,7 +75,7 @@ export default function MobileContact() {
           </div>
           <div>
             <h3 className="text-sm font-bold text-slate-900">{t('Email Us')}</h3>
-            <p className="text-xs text-slate-500">info@maduraitourtaxi.com</p>
+            <p className="text-xs text-slate-500">maduraitourtaxi1@gmail.com</p>
           </div>
         </div>
 
