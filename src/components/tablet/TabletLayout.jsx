@@ -8,6 +8,8 @@ import TabletVehicles from '../../pages/tablet/TabletVehicles';
 import TabletPackages from '../../pages/tablet/TabletPackages';
 import TabletContact from '../../pages/tablet/TabletContact';
 import TabletGallery from '../../pages/tablet/TabletGallery';
+import PrivacyPolicy from '../../pages/PrivacyPolicy';
+import TermsAndConditions from '../../pages/TermsAndConditions';
 
 const TabletLayout = () => {
   return (
@@ -21,6 +23,8 @@ const TabletLayout = () => {
           <Route path="/packages" element={<TabletPackages />} />
           <Route path="/contact" element={<TabletContact />} />
           <Route path="/gallery" element={<TabletGallery />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsAndConditions />} />
         </Routes>
       </main>
       <TabletFooter />

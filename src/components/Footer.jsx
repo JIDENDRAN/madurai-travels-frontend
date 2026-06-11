@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const FacebookIcon = ({ className }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -92,9 +93,9 @@ const Footer = () => {
             © 2026 Madurai Tour Taxi. All Rights Reserved.
           </p>
           <div className="flex space-x-4 text-sm text-slate-300">
-            <a href="#" className="hover:text-white transition-colors">{t('Privacy Policy')}</a>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('Privacy Policy')}</Link>
             <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">{t('Terms & Conditions')}</a>
+            <Link to="/terms-conditions" className="hover:text-white transition-colors">{t('Terms & Conditions')}</Link>
           </div>
         </div>
       </div>

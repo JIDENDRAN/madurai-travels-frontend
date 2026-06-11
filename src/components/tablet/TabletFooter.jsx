@@ -54,9 +54,9 @@ export default function TabletFooter() {
           <div className="flex justify-between items-center">
             <p>© 2026 Madurai Tour Taxi. All Rights Reserved.</p>
             <div className="flex space-x-3">
-              <a href="#" className="hover:text-white transition-colors">{t('Privacy Policy')}</a>
+              <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('Privacy Policy')}</Link>
               <span>|</span>
-              <a href="#" className="hover:text-white transition-colors">{t('Terms & Conditions')}</a>
+              <Link to="/terms-conditions" className="hover:text-white transition-colors">{t('Terms & Conditions')}</Link>
               <span>|</span>
               <a href="/admin" className="hover:text-white transition-colors">Admin</a>
             </div>

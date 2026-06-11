@@ -10,6 +10,8 @@ import MobileContact from './MobileContact';
 import MobileGallery from './MobileGallery';
 import InlineBookingForm from '../InlineBookingForm';
 import { Routes, Route } from 'react-router-dom';
+import PrivacyPolicy from '../../pages/PrivacyPolicy';
+import TermsAndConditions from '../../pages/TermsAndConditions';
 
 export default function MobileLayout() {
   return (
@@ -24,6 +26,8 @@ export default function MobileLayout() {
           <Route path="/contact" element={<MobileContact />} />
           <Route path="/gallery" element={<MobileGallery />} />
           <Route path="/booking" element={<InlineBookingForm />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsAndConditions />} />
         </Routes>
       </main>
       <MobileFooter />

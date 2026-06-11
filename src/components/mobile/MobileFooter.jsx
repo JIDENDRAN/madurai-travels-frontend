@@ -49,9 +49,9 @@ export default function MobileFooter() {
         <div className="border-t border-slate-800 pt-6 text-[11px] text-slate-300 space-y-4">
           <p>© 2026 Madurai Tour Taxi. All Rights Reserved.</p>
           <div className="flex justify-center items-center gap-3">
-            <a href="#" className="hover:text-white transition-colors">{t('Privacy Policy')}</a>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('Privacy Policy')}</Link>
             <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">{t('Terms & Conditions')}</a>
+            <Link to="/terms-conditions" className="hover:text-white transition-colors">{t('Terms & Conditions')}</Link>
             <span>|</span>
             <a href="/admin" className="hover:text-white transition-colors">Admin</a>
           </div>

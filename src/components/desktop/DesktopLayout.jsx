@@ -9,6 +9,8 @@ import Vehicles from '../../pages/Vehicles';
 import Packages from '../../pages/Packages';
 import Contact from '../../pages/Contact';
 import Gallery from '../../pages/Gallery';
+import PrivacyPolicy from '../../pages/PrivacyPolicy';
+import TermsAndConditions from '../../pages/TermsAndConditions';
 
 /**
  * Desktop layout – retains the original premium UI.
@@ -26,6 +28,8 @@ export default function DesktopLayout() {
           <Route path="/packages" element={<Packages />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsAndConditions />} />
         </Routes>
       </main>
       <Footer />
