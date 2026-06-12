@@ -97,14 +97,19 @@ export default function InlineBookingForm({ defaultVehicle, defaultPackage }) {
     );
   };
 
-  const fallbackNominatim = async (lat, lon, isPickup) => {
+  const fallbackNominatim = async (latitude, longitude, isPickup) => {
     try {
-      const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18`);
-      const data = await res.json();
-      const addr = data.display_name || `${lat.toFixed(6)}, ${lon.toFixed(6)}`;
-      setFormData(prev => ({ ...prev, [isPickup ? 'fromLocation' : 'toLocation']: addr }));
-    } catch {
-      setFormData(prev => ({ ...prev, [isPickup ? 'fromLocation' : 'toLocation']: `${lat.toFixed(6)}, ${lon.toFixed(6)}` }));
+      // Disabled OpenStreetMap fetch for now
+      setFormData(prev => ({
+        ...prev,
+        [isPickup ? 'fromLocation' : 'toLocation']: `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`
+      }));
+    } catch (error) {
+      console.error("Nominatim geocoding error:", error);
+      setFormData(prev => ({
+        ...prev,
+        [isPickup ? 'fromLocation' : 'toLocation']: `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`
+      }));
     }
   };
 

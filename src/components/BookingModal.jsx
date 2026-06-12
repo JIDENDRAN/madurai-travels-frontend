@@ -115,25 +115,11 @@ const BookingModal = ({ isOpen, onClose, defaultVehicle, defaultPackage }) => {
 
   const fallbackNominatim = async (latitude, longitude, isPickup) => {
     try {
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`
-      );
-      if (!response.ok) {
-        throw new Error("Failed to reverse geocode coordinate");
-      }
-      const data = await response.json();
-      if (data && data.display_name) {
-        const address = data.display_name;
-        setFormData(prev => ({
-          ...prev,
-          [isPickup ? 'fromLocation' : 'toLocation']: address
-        }));
-      } else {
-        setFormData(prev => ({
-          ...prev,
-          [isPickup ? 'fromLocation' : 'toLocation']: `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`
-        }));
-      }
+      // Disabled OpenStreetMap fetch for now
+      setFormData(prev => ({
+        ...prev,
+        [isPickup ? 'fromLocation' : 'toLocation']: `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`
+      }));
     } catch (error) {
       console.error("Nominatim geocoding error:", error);
       setFormData(prev => ({

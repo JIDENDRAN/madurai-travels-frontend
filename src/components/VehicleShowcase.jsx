@@ -202,10 +202,10 @@ const VehicleShowcase = () => {
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(14,22,36,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(14,22,36,0.3)_1px,transparent_1px)] bg-[size:32px_32px] opacity-40 z-0 pointer-events-none" />
               )}
               {activeBg === 'highway' && (
-                <div className="absolute inset-0 opacity-15 pointer-events-none bg-cover bg-center mix-blend-color-dodge" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&q=80&w=800')` }} />
+                <div className="absolute inset-0 opacity-15 pointer-events-none bg-sky-950/20 mix-blend-color-dodge" />
               )}
               {activeBg === 'offroad' && (
-                <div className="absolute inset-0 opacity-20 pointer-events-none bg-cover bg-center mix-blend-overlay animate-pulse" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1509114397022-ed747cca3f65?auto=format&fit=crop&q=80&w=800')`, animationDuration: '6s' }} />
+                <div className="absolute inset-0 opacity-20 pointer-events-none bg-amber-950/20 mix-blend-overlay animate-pulse" style={{ animationDuration: '6s' }} />
               )}
 
               {/* Status HUD Info Box */}

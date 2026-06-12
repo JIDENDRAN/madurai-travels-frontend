@@ -950,11 +950,10 @@ const AdminDashboard = () => {
                           <p className="text-sm text-slate-300 font-bold mb-4">Scan QR code using WhatsApp Link a Device:</p>
                           {whatsappStatus.qrCode ? (
                             <div className="bg-white p-3 rounded-2xl inline-block shadow-lg">
-                              <img
-                                src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(whatsappStatus.qrCode)}`}
-                                alt="WhatsApp QR Code"
-                                className="w-48 h-48 block mx-auto"
-                              />
+                              <div className="w-48 h-48 bg-slate-100 flex flex-col items-center justify-center text-xs text-slate-500 text-center p-4">
+                                <span>QR Code Generation Disabled</span>
+                                <span className="mt-1">Link your device via console or wait for appeal.</span>
+                              </div>
                             </div>
                           ) : (
                             <div className="py-8 flex flex-col items-center justify-center text-slate-500">

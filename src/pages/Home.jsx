@@ -94,56 +94,56 @@ const reviewsData = [
     text: 'We booked a round trip to Rameswaram from Madurai. The Swift Dzire was spotless, the AC was very cooling, and our driver Karthik was extremely familiar with the temple route and best local eateries. Highly recommended!',
     role: 'Local Customer',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80'
+    avatar: Logo
   },
   {
     name: 'Dr. Priya Sharma',
     text: 'Our Kodaikanal trip with family in their Innova Crysta was outstanding. The driver handled the steep hill curves very smoothly, making the journey incredibly safe. Very reasonable prices with clear billing!',
     role: 'Tourist',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&h=150&q=80'
+    avatar: Logo
   },
   {
     name: 'Arun Verma',
     text: 'Excellent airport pickup and temple sightseeing service in Madurai. The vehicle was on-time, and the driver spoke fluent Tamil and basic English. Super easy WhatsApp booking process.',
     role: 'Business Traveler',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80'
+    avatar: Logo
   },
   {
     name: 'Meera Nair',
     text: 'Booked a 12-seater Tempo Traveller for a family temple tour of Madurai, Thanjavur, and Trichy. Highly comfortable, clean upholstery, and excellent music system. The customer support team was responsive throughout.',
     role: 'Family Group',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80'
+    avatar: Logo
   },
   {
     name: 'Sanjay Krishnan',
     text: 'Best outstation taxi service in Madurai. Clean Ciaz sedan, safe night driving, and very professional behavior. No hidden charges - toll and parking bills were transparently shared. Recommend them to all tourists.',
     role: 'Regular Traveler',
     rating: 4,
-    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&h=150&q=80'
+    avatar: Logo
   },
   {
     name: 'Aishwarya Rajesh',
     text: 'Wonderful experience booking a taxi from Madurai to Munnar. The hill climb was extremely pleasant. The driver was polite, stopped at multiple scenic viewpoints for photos, and guided us well.',
     role: 'Leisure Traveler',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80'
+    avatar: Logo
   },
   {
     name: 'Rajesh Pillai',
     text: 'Punctual and reliable service. Used Madurai Tour Taxi for airport pickup at midnight. The driver was waiting with a placard and the sedan cab was clean. Fair prices and helpful support.',
     role: 'Corporate Client',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&h=150&q=80'
+    avatar: Logo
   },
   {
     name: 'Kavitha Krishnan',
     text: 'Booked a trip to Kanyakumari to watch the sunset and return the next day. The drive was comfortable, and our driver suggested great local places to try authentic South Indian food. Will book again!',
     role: 'Family Trip',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=150&h=150&q=80'
+    avatar: Logo
   }
 ];
 
@@ -390,25 +390,11 @@ const Home = () => {
 
   const fallbackNominatim = async (latitude, longitude, isPickup) => {
     try {
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`
-      );
-      if (!response.ok) {
-        throw new Error("Failed to reverse geocode coordinate");
-      }
-      const data = await response.json();
-      if (data && data.display_name) {
-        const address = data.display_name;
-        setFormData(prev => ({
-          ...prev,
-          [isPickup ? 'fromLocation' : 'toLocation']: address
-        }));
-      } else {
-        setFormData(prev => ({
-          ...prev,
-          [isPickup ? 'fromLocation' : 'toLocation']: `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`
-        }));
-      }
+      // Disabled OpenStreetMap fetch for now
+      setFormData(prev => ({
+        ...prev,
+        [isPickup ? 'fromLocation' : 'toLocation']: `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`
+      }));
     } catch (error) {
       console.error("Nominatim geocoding error:", error);
       setFormData(prev => ({

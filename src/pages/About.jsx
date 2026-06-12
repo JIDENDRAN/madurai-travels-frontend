@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Award, ThumbsUp, Heart } from 'lucide-react';
 import maduraivideo from '../assets/maduraivideo.mp4';
+import maduraiAerial from '../assets/madurai_aerial_bg.png';
 
 const About = () => {
   const { t } = useTranslation();
@@ -20,7 +21,7 @@ const About = () => {
       {/* Hero Section */}
       <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80" alt="About Us" className="w-full h-full object-cover" />
+          <img src={maduraiAerial} alt="About Us" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-slate-900/60 mix-blend-multiply" />
         </div>
         <motion.div

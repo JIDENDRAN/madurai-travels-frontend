@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ShieldCheck, Award, ThumbsUp, Heart } from 'lucide-react';
 import maduraivideo from '../../assets/maduraivideo.mp4';
+import maduraiAerial from '../../assets/madurai_aerial_bg.png';
 
 export default function TabletAbout() {
   const { t } = useTranslation();
@@ -11,7 +12,7 @@ export default function TabletAbout() {
       {/* Hero Section */}
       <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80" alt="About Us" className="w-full h-full object-cover" />
+          <img src={maduraiAerial} alt="About Us" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-slate-900/60" />
         </div>
         <div className="relative z-10 text-center px-6">

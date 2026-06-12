@@ -103,30 +103,7 @@ const Footer = () => {
             <p>All Rights Reserved.</p>
           </div>
 
-          {/* Divider */}
-          <div className="hidden xl:block w-px h-10 bg-slate-700 mx-4"></div>
 
-          {/* Left Middle */}
-          <div className="flex flex-col items-center xl:items-start gap-1 whitespace-nowrap">
-            <span>Designed & Developed by</span>
-            <a href="https://codethriveinfotech.in/" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity group mt-0.5">
-              <img src={logo} alt="Code Thrive InfoTech" className="h-6 w-auto" />
-              <span className="font-bold tracking-wider text-white group-hover:text-yellow-500 group-hover:underline underline-offset-4 transition-colors">CODE THRIVE INFOTECH</span>
-            </a>
-          </div>
-
-          {/* Divider */}
-          <div className="hidden xl:block w-px h-10 bg-slate-700 mx-4"></div>
-
-          {/* Right Middle */}
-          <div className="flex items-center justify-center whitespace-nowrap xl:pt-2">
-            <a href="https://codethriveinfotech.in/" target="_blank" rel="noreferrer" className="px-4 py-2 bg-yellow-500/10 border border-yellow-500 hover:bg-yellow-500 text-yellow-500 hover:text-slate-900 rounded animate-pulse hover:animate-none transition-all shadow-[0_0_10px_rgba(234,179,8,0.2)] text-xs font-bold uppercase tracking-wider">
-              Click to create your website
-            </a>
-          </div>
-
-          {/* Divider */}
-          <div className="hidden xl:block w-px h-10 bg-slate-700 mx-4"></div>
 
           {/* Right Side */}
           <div className="flex flex-col items-center xl:items-end gap-2 whitespace-nowrap">

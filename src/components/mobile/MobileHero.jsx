@@ -74,9 +74,7 @@ export default function MobileHero() {
           );
         } else {
           try {
-            const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=18`);
-            const data = await res.json();
-            setFormData(prev => ({ ...prev, [isPickup ? 'fromLocation' : 'toLocation']: data.display_name || `${latitude}, ${longitude}` }));
+            setFormData(prev => ({ ...prev, [isPickup ? 'fromLocation' : 'toLocation']: `${latitude}, ${longitude}` }));
           } catch { /* ignore */ }
           setLoading(false);
         }

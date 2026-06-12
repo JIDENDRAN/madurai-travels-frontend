@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ShieldCheck, ThumbsUp, Heart, Award, Users, Clock } from 'lucide-react';
 import maduraivideo from '../../assets/maduraivideo.mp4';
+import maduraiAerial from '../../assets/madurai_aerial_bg.png';
 
 export default function MobileAbout() {
   const { t } = useTranslation();
@@ -18,7 +19,7 @@ export default function MobileAbout() {
       <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-slate-900">
           <img
-            src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=800"
+            src={maduraiAerial}
             alt="About Madurai Tour Taxi"
             className="w-full h-full object-cover opacity-50"
           />

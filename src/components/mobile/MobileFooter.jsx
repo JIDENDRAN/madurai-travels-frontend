@@ -55,16 +55,7 @@ export default function MobileFooter() {
             <span>|</span>
             <a href="/admin" className="hover:text-white transition-colors">Admin</a>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-1.5 pt-4 border-t border-slate-800/50">
-            <span className="text-slate-400">Designed & Developed by</span>
-            <a href="https://codethriveinfotech.in/" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity group">
-              <img src={logo} alt="Code Thrive InfoTech" className="h-3.5 w-auto" />
-              <span className="font-bold tracking-wider text-white group-hover:text-yellow-500 group-hover:underline underline-offset-4 transition-colors">CODE THRIVE INFOTECH</span>
-            </a>
-            <a href="https://codethriveinfotech.in/" target="_blank" rel="noreferrer" className="mt-2 w-full max-w-[200px] px-2 py-1.5 bg-yellow-500/10 border border-yellow-500 hover:bg-yellow-500 text-yellow-500 hover:text-slate-900 rounded animate-pulse hover:animate-none transition-all shadow-[0_0_10px_rgba(234,179,8,0.2)] text-[9px] font-bold uppercase tracking-wider text-center">
-              Click to create your website
-            </a>
-          </div>
+
         </div>
       </div>
     </footer>
