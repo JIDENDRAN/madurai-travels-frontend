@@ -17,8 +17,8 @@ import {
 
 // Static imports of the 8 images from the gallery folder
 import imgMeenakshi from '../../assets/gallery/51714.png';
-import imgAlagar from '../../assets/gallery/51887.jpg.jpeg';
-import imgThirumalai from '../../assets/gallery/51893.jpg.jpeg';
+import imgAlagar from '../../assets/gallery/51887.jpeg';
+import imgThirumalai from '../../assets/gallery/51893.jpeg';
 import imgRameswaram from '../../assets/gallery/51904.png';
 import imgKodaikanal from '../../assets/gallery/WhatsApp Image 2026-05-29 at 4.14.12 PM.jpeg';
 import imgOoty from '../../assets/gallery/WhatsApp Image 2026-05-29 at 4.14.14 PM.jpeg';

@@ -39,7 +39,19 @@ const AdminLogin = () => {
   return (
     <div className="min-h-screen bg-slate-950 flex items-center justify-center relative overflow-hidden">
       {/* Security Scanning Effect Background */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 pointer-events-none"></div>
+      <div 
+        className="absolute inset-0 opacity-15 pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(45deg, #0f172a 25%, transparent 25%), 
+            linear-gradient(-45deg, #0f172a 25%, transparent 25%), 
+            linear-gradient(45deg, transparent 75%, #0f172a 75%), 
+            linear-gradient(-45deg, transparent 75%, #0f172a 75%)
+          `,
+          backgroundSize: '20px 20px',
+          backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
+        }}
+      ></div>
       <motion.div
         animate={{ y: ["-100%", "200%"] }}
         transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
@@ -114,16 +126,6 @@ const AdminLogin = () => {
             </button>
           </form>
 
-          <div className="mt-6 p-4 border border-green-500/30 rounded-2xl bg-green-500/5 text-center text-xs font-mono text-green-400">
-            <span className="font-bold uppercase block mb-1 text-green-500">Authorization Details</span>
-            <span>Username: <span className="underline font-bold">admin</span></span>
-            <span className="mx-2">|</span>
-            <span>Passcode: <span className="underline font-bold">admin123</span></span>
-          </div>
-
-          <div className="mt-8 text-center text-slate-600 text-xs font-mono">
-            IP Logged. Unauthorized access will be prosecuted.
-          </div>
         </motion.div>
       </div>
     </div>
