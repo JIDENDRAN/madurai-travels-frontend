@@ -96,8 +96,8 @@ const Footer = () => {
 
           <div className="flex items-center gap-2 text-slate-400 text-sm font-medium">
             <span>Designed & Developed by</span>
-            <img src={codeThriveLogo} alt="CodeThrive InfoTech Logo" className="h-5 w-auto object-contain" />
-            <span className="font-bold text-white tracking-wider">CODE THRIVE INFOTECH</span>
+            <img src={codeThriveLogo} alt="CodeThrive InfoTech Logo" className="h-7 w-auto object-contain" />
+            <span className="font-bold text-white tracking-wider">CODETHRIVE INFOTECH</span>
           </div>
 
           <div className="flex space-x-4 text-sm text-slate-300">
