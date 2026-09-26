@@ -35,7 +35,7 @@ export default function TabletFooter() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-yellow-500" />
-                <span>+91 86675 20367</span>
+                <span>+91 70100 21659</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-yellow-500" />
