@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
+import codeThriveLogo from '../../assets/codethrive_logo.png';
 
 export default function TabletFooter() {
   const { t } = useTranslation();
@@ -50,9 +51,14 @@ export default function TabletFooter() {
         </div>
 
         {/* Bottom copyright */}
-        <div className="border-t border-slate-800 pt-6 flex flex-col gap-4 text-xs text-slate-300">
-          <div className="flex justify-between items-center">
+        <div className="border-t border-slate-800 pt-6 flex flex-col items-center gap-3 text-xs text-slate-300">
+          <div className="flex flex-col md:flex-row justify-between items-center w-full gap-3">
             <p>© 2026 Madurai Tour Taxi. All Rights Reserved.</p>
+            <div className="flex items-center gap-2 text-slate-400 font-medium">
+              <span>Designed & Developed by</span>
+              <img src={codeThriveLogo} alt="CodeThrive InfoTech Logo" className="h-4.5 w-auto object-contain" />
+              <span className="font-bold text-white tracking-wider">CODE THRIVE INFOTECH</span>
+            </div>
             <div className="flex space-x-3">
               <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('Privacy Policy')}</Link>
               <span>|</span>

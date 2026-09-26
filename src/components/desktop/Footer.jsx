@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
+import codeThriveLogo from '../../assets/codethrive_logo.png';
 
 const FacebookIcon = ({ className }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -95,24 +96,28 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-800 pt-8 flex flex-col xl:flex-row justify-between items-center xl:items-start text-sm text-slate-300 gap-6 xl:gap-0 w-full">
+        <div className="border-t border-slate-800 pt-8 flex flex-col xl:flex-row justify-between items-center text-sm text-slate-300 gap-6 xl:gap-0 w-full">
           
           {/* Left Side */}
-          <div className="flex flex-col items-center xl:items-start gap-1 whitespace-nowrap">
-            <p>© 2026 Madurai Tour Taxi.</p>
-            <p>All Rights Reserved.</p>
+          <div className="flex flex-col items-center xl:items-start whitespace-nowrap">
+            <p>© 2026 Madurai Tour Taxi. All Rights Reserved.</p>
           </div>
 
-
+          {/* Designed & Developed by */}
+          <div className="flex items-center gap-2 text-slate-400 text-sm font-medium">
+            <span>Designed & Developed by</span>
+            <img src={codeThriveLogo} alt="CodeThrive InfoTech Logo" className="h-5 w-auto object-contain" />
+            <span className="font-bold text-white tracking-wider">CODE THRIVE INFOTECH</span>
+          </div>
 
           {/* Right Side */}
-          <div className="flex flex-col items-center xl:items-end gap-2 whitespace-nowrap">
+          <div className="flex flex-col items-center xl:items-end gap-1.5 whitespace-nowrap">
             <div className="flex space-x-4">
               <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('Privacy Policy')}</Link>
               <span>|</span>
               <Link to="/terms-conditions" className="hover:text-white transition-colors">{t('Terms & Conditions')}</Link>
             </div>
-            <a href="/admin" className="hover:text-white transition-colors">Admin</a>
+            <a href="/admin" className="hover:text-white transition-colors text-xs text-slate-400">Admin</a>
           </div>
 
         </div>

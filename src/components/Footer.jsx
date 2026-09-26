@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import codeThriveLogo from '../assets/codethrive_logo.png';
 
 const FacebookIcon = ({ className }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -88,14 +89,23 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-slate-300 mb-4 md:mb-0">
+        <div className="border-t border-slate-800 pt-8 flex flex-col lg:flex-row justify-between items-center gap-4 text-sm text-slate-300">
+          <p className="mb-2 lg:mb-0">
             © 2026 Madurai Tour Taxi. All Rights Reserved.
           </p>
+
+          <div className="flex items-center gap-2 text-slate-400 text-sm font-medium">
+            <span>Designed & Developed by</span>
+            <img src={codeThriveLogo} alt="CodeThrive InfoTech Logo" className="h-5 w-auto object-contain" />
+            <span className="font-bold text-white tracking-wider">CODE THRIVE INFOTECH</span>
+          </div>
+
           <div className="flex space-x-4 text-sm text-slate-300">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('Privacy Policy')}</Link>
             <span>|</span>
             <Link to="/terms-conditions" className="hover:text-white transition-colors">{t('Terms & Conditions')}</Link>
+            <span>|</span>
+            <a href="/admin" className="hover:text-white transition-colors">Admin</a>
           </div>
         </div>
       </div>
