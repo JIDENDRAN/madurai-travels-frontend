@@ -5,6 +5,7 @@ import {
   Calendar, MapPin, Clock, Users, PhoneCall, Car,
   ArrowRight, CheckCircle, Navigation
 } from 'lucide-react';
+import LocationInput from './common/LocationInput';
 import API_BASE_URL from '../apiConfig';
 
 export default function InlineBookingForm({ defaultVehicle, defaultPackage }) {
@@ -191,54 +192,28 @@ export default function InlineBookingForm({ defaultVehicle, defaultPackage }) {
           ) : (
             <form className="space-y-3" onSubmit={handleSubmit}>
               {/* Pickup */}
-              <div className="relative">
-                <MapPin className="absolute left-3 top-3.5 text-slate-400 w-4 h-4" />
-                <input
-                  ref={pickupInputRef}
-                  type="text"
-                  name="fromLocation"
-                  value={formData.fromLocation}
-                  onChange={handleInputChange}
-                  placeholder={t('Pickup Location')}
-                  className={inputCls}
-                  required
-                />
-                <button
-                  type="button"
-                  onClick={() => detectLocation('pickup')}
-                  className="absolute right-3 top-3.5 text-slate-400 hover:text-yellow-500 transition-colors"
-                  title={t('Detect Location')}
-                >
-                  {loadingPickup
-                    ? <div className="w-4 h-4 border-2 border-yellow-500 border-t-transparent rounded-full animate-spin" />
-                    : <Navigation className="w-4 h-4" />}
-                </button>
-              </div>
+              <LocationInput
+                name="fromLocation"
+                value={formData.fromLocation}
+                onChange={handleInputChange}
+                placeholder={t('Pickup Location')}
+                inputRef={pickupInputRef}
+                onDetect={() => detectLocation('pickup')}
+                loadingDetect={loadingPickup}
+                required
+              />
 
               {/* Drop */}
-              <div className="relative">
-                <MapPin className="absolute left-3 top-3.5 text-slate-400 w-4 h-4" />
-                <input
-                  ref={dropInputRef}
-                  type="text"
-                  name="toLocation"
-                  value={formData.toLocation}
-                  onChange={handleInputChange}
-                  placeholder={t('Drop Location')}
-                  className={inputCls}
-                  required
-                />
-                <button
-                  type="button"
-                  onClick={() => detectLocation('drop')}
-                  className="absolute right-3 top-3.5 text-slate-400 hover:text-yellow-500 transition-colors"
-                  title={t('Detect Location')}
-                >
-                  {loadingDrop
-                    ? <div className="w-4 h-4 border-2 border-yellow-500 border-t-transparent rounded-full animate-spin" />
-                    : <Navigation className="w-4 h-4" />}
-                </button>
-              </div>
+              <LocationInput
+                name="toLocation"
+                value={formData.toLocation}
+                onChange={handleInputChange}
+                placeholder={t('Drop Location')}
+                inputRef={dropInputRef}
+                onDetect={() => detectLocation('drop')}
+                loadingDetect={loadingDrop}
+                required
+              />
 
               {/* Date & Time */}
               <div className="grid grid-cols-2 gap-3">

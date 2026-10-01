@@ -6,6 +6,7 @@ import Logo from '../../assets/MaduraiTaxiLogo.png';
 import MeenakshiMobile from '../../assets/meenakshi_mobile.png';
 import ThirumalaiMobile from '../../assets/thirumalai_mobile.png';
 import RameswaramBg from '../../assets/rameswaram_bg.png';
+import LocationInput from '../common/LocationInput';
 import API_BASE_URL from '../../apiConfig';
 
 export default function MobileHero() {
@@ -182,28 +183,30 @@ export default function MobileHero() {
             ) : (
               <form className="space-y-2.5" onSubmit={handleSubmit}>
                 {/* Pickup */}
-                <div className="relative">
-                  <MapPin className="absolute left-2.5 top-2.5 text-yellow-400 w-4 h-4" />
-                  <input ref={pickupRef} type="text" name="fromLocation" value={formData.fromLocation}
-                    onChange={handleChange} placeholder={t('Pickup Location')} className={inputCls} required />
-                  <button type="button" onClick={() => detectLocation('pickup')}
-                    className="absolute right-2.5 top-2.5 text-slate-400 hover:text-yellow-400">
-                    {loadingPickup ? <div className="w-3.5 h-3.5 border-2 border-yellow-400 border-t-transparent rounded-full animate-spin" />
-                      : <Navigation className="w-3.5 h-3.5" />}
-                  </button>
-                </div>
+                <LocationInput
+                  name="fromLocation"
+                  value={formData.fromLocation}
+                  onChange={handleChange}
+                  placeholder={t('Pickup Location')}
+                  inputRef={pickupRef}
+                  onDetect={() => detectLocation('pickup')}
+                  loadingDetect={loadingPickup}
+                  inputClassName="py-2.5 text-xs"
+                  required
+                />
 
                 {/* Drop */}
-                <div className="relative">
-                  <MapPin className="absolute left-2.5 top-2.5 text-yellow-400 w-4 h-4" />
-                  <input ref={dropRef} type="text" name="toLocation" value={formData.toLocation}
-                    onChange={handleChange} placeholder={t('Drop Location')} className={inputCls} required />
-                  <button type="button" onClick={() => detectLocation('drop')}
-                    className="absolute right-2.5 top-2.5 text-slate-400 hover:text-yellow-400">
-                    {loadingDrop ? <div className="w-3.5 h-3.5 border-2 border-yellow-400 border-t-transparent rounded-full animate-spin" />
-                      : <Navigation className="w-3.5 h-3.5" />}
-                  </button>
-                </div>
+                <LocationInput
+                  name="toLocation"
+                  value={formData.toLocation}
+                  onChange={handleChange}
+                  placeholder={t('Drop Location')}
+                  inputRef={dropRef}
+                  onDetect={() => detectLocation('drop')}
+                  loadingDetect={loadingDrop}
+                  inputClassName="py-2.5 text-xs"
+                  required
+                />
 
                 {/* Date & Time */}
                 <div className="grid grid-cols-2 gap-2">

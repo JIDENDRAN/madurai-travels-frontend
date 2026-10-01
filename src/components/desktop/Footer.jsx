@@ -112,12 +112,11 @@ const Footer = () => {
 
           {/* Right Side */}
           <div className="flex flex-col items-center xl:items-end gap-1.5 whitespace-nowrap">
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 items-center">
               <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('Privacy Policy')}</Link>
               <span>|</span>
               <Link to="/terms-conditions" className="hover:text-white transition-colors">{t('Terms & Conditions')}</Link>
             </div>
-            <a href="/admin" className="hover:text-white transition-colors text-xs text-slate-400">Admin</a>
           </div>
 
         </div>

@@ -59,12 +59,10 @@ export default function TabletFooter() {
               <img src={codeThriveLogo} alt="CodeThrive InfoTech Logo" className="h-6.5 w-auto object-contain" />
               <span className="font-bold text-white tracking-wider">CODETHRIVE INFOTECH</span>
             </div>
-            <div className="flex space-x-3">
+            <div className="flex items-center space-x-3">
               <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('Privacy Policy')}</Link>
               <span>|</span>
               <Link to="/terms-conditions" className="hover:text-white transition-colors">{t('Terms & Conditions')}</Link>
-              <span>|</span>
-              <a href="/admin" className="hover:text-white transition-colors">Admin</a>
             </div>
           </div>
 

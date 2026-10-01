@@ -5,6 +5,7 @@ import { PhoneCall, Calendar, MapPin, Clock, Users, ShieldCheck, Car as CarIcon,
 import { getVehicleImage, getBgImage, getPackageImage } from '../utils/imageImports';
 import FloatingParticles from '../components/FloatingParticles';
 import BookingModal from '../components/BookingModal';
+import LocationInput from '../components/common/LocationInput';
 import Logo from '../assets/madurai tour taxi logo.png';
 import API_BASE_URL from '../apiConfig';
 
@@ -648,60 +649,27 @@ const Home = () => {
 
                   {/* Locations Row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 lg:gap-4">
+                    <LocationInput
+                      name="fromLocation"
+                      value={formData.fromLocation}
+                      onChange={handleInputChange}
+                      placeholder={t('Start Location')}
+                      inputRef={pickupInputRef}
+                      onDetect={() => detectLocation('pickup')}
+                      loadingDetect={loadingPickup}
+                      required
+                    />
 
-                    {/* Pickup Input */}
-                    <div className="relative animate-fadeIn">
-                      <MapPin className="absolute left-3.5 top-3.5 text-slate-400 w-4 h-4 lg:w-4.5 lg:h-4.5" />
-                      <input
-                        ref={pickupInputRef}
-                        type="text"
-                        name="fromLocation"
-                        value={formData.fromLocation}
-                        onChange={handleInputChange}
-                        placeholder={t('Start Location')}
-                        className="w-full pl-10 pr-10 py-3 rounded-xl bg-white border border-slate-200 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm transition-all text-slate-900 outline-none"
-                        required
-                      />
-                      <button
-                        type="button"
-                        onClick={() => detectLocation('pickup')}
-                        className="absolute right-3.5 top-3.5 text-slate-455 hover:text-yellow-500 transition-colors focus:outline-none"
-                        title={t("Detect Live Location")}
-                      >
-                        {loadingPickup ? (
-                          <div className="w-4 h-4 border-2 border-yellow-500 border-t-transparent rounded-full animate-spin"></div>
-                        ) : (
-                          <Navigation className="w-4.5 h-4.5 hover:scale-110 active:scale-95 transition-transform" />
-                        )}
-                      </button>
-                    </div>
-
-                    {/* Drop Input */}
-                    <div className="relative animate-fadeIn">
-                      <MapPin className="absolute left-3.5 top-3.5 text-slate-455 w-4 h-4 lg:w-4.5 lg:h-4.5" />
-                      <input
-                        ref={dropInputRef}
-                        type="text"
-                        name="toLocation"
-                        value={formData.toLocation}
-                        onChange={handleInputChange}
-                        placeholder={t('End Location')}
-                        className="w-full pl-10 pr-10 py-3 rounded-xl bg-white border border-slate-200 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm transition-all text-slate-900 outline-none"
-                        required
-                      />
-                      <button
-                        type="button"
-                        onClick={() => detectLocation('drop')}
-                        className="absolute right-3.5 top-3.5 text-slate-450 hover:text-yellow-500 transition-colors focus:outline-none"
-                        title={t("Detect Live Location")}
-                      >
-                        {loadingDrop ? (
-                          <div className="w-4 h-4 border-2 border-yellow-500 border-t-transparent rounded-full animate-spin"></div>
-                        ) : (
-                          <Navigation className="w-4.5 h-4.5 hover:scale-110 active:scale-95 transition-transform" />
-                        )}
-                      </button>
-                    </div>
+                    <LocationInput
+                      name="toLocation"
+                      value={formData.toLocation}
+                      onChange={handleInputChange}
+                      placeholder={t('End Location')}
+                      inputRef={dropInputRef}
+                      onDetect={() => detectLocation('drop')}
+                      loadingDetect={loadingDrop}
+                      required
+                    />
                   </div>
 
                   {/* Date & Time Row */}

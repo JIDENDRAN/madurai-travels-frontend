@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, MapPin, Clock, Users, PhoneCall, Car, ArrowRight, CheckCircle, Navigation } from 'lucide-react';
+import LocationInput from './common/LocationInput';
 import API_BASE_URL from '../apiConfig';
 
 const BookingModal = ({ isOpen, onClose, defaultVehicle, defaultPackage }) => {
@@ -225,56 +226,27 @@ const BookingModal = ({ isOpen, onClose, defaultVehicle, defaultPackage }) => {
               ) : (
                 <form className="space-y-4" onSubmit={handleBookingSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="relative">
-                      <MapPin className="absolute left-3 top-3.5 text-slate-400 w-5 h-5" />
-                      <input
-                        ref={pickupInputRef}
-                        type="text"
-                        name="fromLocation"
-                        value={formData.fromLocation}
-                        onChange={handleInputChange}
-                        placeholder={t('Start Location')}
-                        className="w-full pl-10 pr-10 py-3 rounded-xl bg-white border border-slate-200 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all outline-none"
-                        required
-                      />
-                      <button
-                        type="button"
-                        onClick={() => detectLocation('pickup')}
-                        className="absolute right-3 top-3.5 text-slate-400 hover:text-yellow-500 transition-colors focus:outline-none"
-                        title={t("Detect Live Location")}
-                      >
-                        {loadingPickup ? (
-                          <div className="w-4 h-4 border-2 border-yellow-500 border-t-transparent rounded-full animate-spin"></div>
-                        ) : (
-                          <Navigation className="w-4.5 h-4.5 hover:scale-110 active:scale-95 transition-transform" />
-                        )}
-                      </button>
-                    </div>
-                    <div className="relative">
-                      <MapPin className="absolute left-3 top-3.5 text-slate-400 w-5 h-5" />
-                      <input
-                        ref={dropInputRef}
-                        type="text"
-                        name="toLocation"
-                        value={formData.toLocation}
-                        onChange={handleInputChange}
-                        placeholder={t('End Location')}
-                        className="w-full pl-10 pr-10 py-3 rounded-xl bg-white border border-slate-200 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all outline-none"
-                        required
-                      />
-                      <button
-                        type="button"
-                        onClick={() => detectLocation('drop')}
-                        className="absolute right-3 top-3.5 text-slate-400 hover:text-yellow-500 transition-colors focus:outline-none"
-                        title={t("Detect Live Location")}
-                      >
-                        {loadingDrop ? (
-                          <div className="w-4 h-4 border-2 border-yellow-500 border-t-transparent rounded-full animate-spin"></div>
-                        ) : (
-                          <Navigation className="w-4.5 h-4.5 hover:scale-110 active:scale-95 transition-transform" />
-                        )}
-                      </button>
-                    </div>
+                    <LocationInput
+                      name="fromLocation"
+                      value={formData.fromLocation}
+                      onChange={handleInputChange}
+                      placeholder={t('Start Location')}
+                      inputRef={pickupInputRef}
+                      onDetect={() => detectLocation('pickup')}
+                      loadingDetect={loadingPickup}
+                      required
+                    />
+
+                    <LocationInput
+                      name="toLocation"
+                      value={formData.toLocation}
+                      onChange={handleInputChange}
+                      placeholder={t('End Location')}
+                      inputRef={dropInputRef}
+                      onDetect={() => detectLocation('drop')}
+                      loadingDetect={loadingDrop}
+                      required
+                    />
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -58,8 +58,6 @@ export default function MobileFooter() {
             <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('Privacy Policy')}</Link>
             <span>|</span>
             <Link to="/terms-conditions" className="hover:text-white transition-colors">{t('Terms & Conditions')}</Link>
-            <span>|</span>
-            <a href="/admin" className="hover:text-white transition-colors">Admin</a>
           </div>
 
         </div>
